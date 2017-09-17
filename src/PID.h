@@ -17,6 +17,12 @@ public:
   double Ki;
   double Kd;
 
+  //double total_err;
+  //int step;
+  //double best_err;
+  //int param_index;
+  //double dp[3];
+  //int flag;
   /*
   * Constructor
   */
@@ -40,7 +46,9 @@ public:
   /*
   * Calculate the total PID error.
   */
-  double TotalError();
+  //double TotalError();
+
+  //void AddToParam(int index, double value);
 };
 
 #endif /* PID_H */
