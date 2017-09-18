@@ -1,0 +1,18 @@
+Reflection
+
+Author: Peiyong
+Date: 18 Sep 2017
+
+1,Describe the effect each of the P, I, D components had in your implementation.
+In my implementation, I have two pid: one is for steer_value, another is for speed.
+For the steer_value, p component defines how hard we turn the steer according to cte.
+I component defines a bias on left or right, in this project the car goes anti-clockwise around a lake, so we set i value to make it more easier to turn left.
+D component take the gradient of cte into account, so when error changes fast we steer harder, when error changes slower we steer lighter, which will make driving smoother.
+
+The PID for speed in my implementaion is meant to make speed slower when error is large, and I only use p component.
+
+
+2,Describe how the final hyperparameters were chosen.
+The twiddle param optimisation method is not very practical in this project. Because the average error during a period is highly rely on initial state, to test different params under same conditions, I need manually restart simulator, then the tuning process can't be automatically. The params in submitted project is tuned manully.
+
+I set speed to a low spped(0.2) first, then set i and d component to 0 for steer, then testing different value for p:0.001, 0.01, 0.1, 1, pick the best one. Then test different i value, then d value.
